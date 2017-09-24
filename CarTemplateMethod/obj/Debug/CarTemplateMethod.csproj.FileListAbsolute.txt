@@ -1,0 +1,6 @@
+C:\Users\gabri\Desktop\Mokslai\5 semestras\PSP\1 užduotis\CarTemplateMethod\CarTemplateMethod\bin\Debug\CarTemplateMethod.exe.config
+C:\Users\gabri\Desktop\Mokslai\5 semestras\PSP\1 užduotis\CarTemplateMethod\CarTemplateMethod\bin\Debug\CarTemplateMethod.exe
+C:\Users\gabri\Desktop\Mokslai\5 semestras\PSP\1 užduotis\CarTemplateMethod\CarTemplateMethod\bin\Debug\CarTemplateMethod.pdb
+C:\Users\gabri\Desktop\Mokslai\5 semestras\PSP\1 užduotis\CarTemplateMethod\CarTemplateMethod\obj\Debug\CarTemplateMethod.csprojResolveAssemblyReference.cache
+C:\Users\gabri\Desktop\Mokslai\5 semestras\PSP\1 užduotis\CarTemplateMethod\CarTemplateMethod\obj\Debug\CarTemplateMethod.exe
+C:\Users\gabri\Desktop\Mokslai\5 semestras\PSP\1 užduotis\CarTemplateMethod\CarTemplateMethod\obj\Debug\CarTemplateMethod.pdb
