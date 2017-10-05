@@ -8,6 +8,14 @@ namespace CarTemplateMethod
 {
     class BMWPartsShop: CarPartsShop
     {
-        
+        public override void BuyDetails()
+       {
+           //buy from Europe
+       }
+
+        public override void MakeGearBox()
+       {
+           //make automatic gear box
+       }
     }
 }

@@ -8,8 +8,8 @@ namespace CarTemplateMethod
 {
     public abstract class CarFactory
     {   
-        public abstract void BuyDetails();
-        public abstract void MakeGearBox();
+        protected abstract void BuyDetails();
+        protected abstract void MakeGearBox();
         
         public void MakeCar()
         {
