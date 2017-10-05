@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarTemplateMethod
 {
-    class Program
+    class BMWPartsShop: CarPartsShop
     {
-        static void Main(string[] args)
-        {
-
-        }
+        
     }
 }
