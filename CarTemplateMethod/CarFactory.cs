@@ -8,13 +8,17 @@ namespace CarTemplateMethod
 {
     public abstract class CarFactory
     {   
-        protected abstract void BuyDetails();
-        protected abstract void MakeGearBox();
+        private double shippingTime;
+        private double constructingTime;
         
-        public void MakeCar()
+        protected abstract double GetShippingTime();
+        protected abstract double GetConstructingTime();
+        
+        public double GetTimeToMakeGearBox()
         {
-            BuyDetails();
-            MakeGearBox();
+            shippingTime = GetShippingTime();
+            constructingTime = GetConstructingTime();
+            return shippingTime + constructingTime;
         }
   
     }

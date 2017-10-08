@@ -6,14 +6,33 @@ using System.Threading.Tasks;
 
 namespace CarTemplateMethod
 {
-    class BMWPartsShop: CarPartsShop
+    class BMWPartsShop: CarFactory
     {
-        public override void BuyDetails()
+        private Dictionary<string, double> distance = new Dictionary<string, double>()
+        {
+            {"France", 2267},
+            {"Germany", 1324},
+            {"UK", 2649},
+        };
+
+        private double packingTime = 2.5;
+        private double shippingTime;
+        private double unpackingTime;
+
+        private int packingTimeDeflection = 10;
+        private Random rnd = new Random();
+        
+        protected override double GetShippingTime()
        {
-           //buy from Europe
+           packingTime += (rnd.Next(-packingTimeDeflection, packingTimeDeflection))/100 * packingTime;
+           var country = distance.ToList()[rnd.Next(distance.Count)];
+           Console.WriteLine("Gear Box details is shipping from " + country.Key + "...");
+           shippingTime = 
+            //country is country.Key
+            //distance is country.Value
        }
 
-        public override void MakeGearBox()
+        protected override double GetConstructingTime()
        {
            //make automatic gear box
        }

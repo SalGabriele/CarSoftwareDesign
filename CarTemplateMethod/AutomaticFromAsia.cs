@@ -8,12 +8,13 @@ namespace CarTemplateMethod
 {
     class AutomaticFromAsia: CarFactory
     {
-       public override void BuyDetails()
+       protected override void BuyDetails()
        {
            //buy from Asia
+           //
        }
 
-        public override void MakeGearBox()
+        protected override void ConstructGearBox()
        {
            //make automatic gear box
        }
