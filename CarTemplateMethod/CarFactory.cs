@@ -17,8 +17,19 @@ namespace CarTemplateMethod
         public double GetTimeToMakeGearBox()
         {
             shippingTime = GetShippingTime();
+            PrintShippingTime();
             constructingTime = GetConstructingTime();
+            PrintConstructingTime();
             return shippingTime + constructingTime;
+        }
+
+        private void PrintShippingTime()
+        {
+            
+        }
+        private void PrintConstructingTime()
+        {
+
         }
   
     }

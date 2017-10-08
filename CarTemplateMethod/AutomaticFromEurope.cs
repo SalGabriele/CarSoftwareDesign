@@ -29,14 +29,13 @@ namespace CarTemplateMethod
 
         private double getReadyTime = 8.3;
         private double constructingTime = 20;
+        private double finishingTime = 15;
+        private double allConstructingTime;
 
         private int getReadyTimeDeflection = 5;
         private int constructingTimeDeflection = 20;
+        private int finishingTimeDeflection = 45;
 
-        
-
-        
-        
         protected override double GetShippingTime()
        {
             packingTime = DoDeflection(packingTime, packingTimeDeflection);
@@ -56,8 +55,17 @@ namespace CarTemplateMethod
         protected override double GetConstructingTime()
        {
             getReadyTime = DoDeflection(getReadyTime, getReadyTimeDeflection);
-           //konstravimas
-           //idejimas i masina
+            constructingTime = DoDeflection(constructingTime, constructingTimeDeflection);
+            finishingTime = DoDeflection(finishingTime, finishingTimeDeflection);
+
+            allConstructingTime = getReadyTime + constructingTime + finishingTime;
+
+            Console.WriteLine("Getting ready takes " + getReadyTime + "hours");
+            Console.WriteLine("Constructing Gear Box takes " + constructingTime + " hours");
+            Console.WriteLine("Putting Gear Box to the car takes " + finishingTime + " hours");
+            Console.WriteLine("Gear Box in the car will be after")
+
+            return allConstructingTime;
        }
 
        private double DoDeflection(double value, int def)
