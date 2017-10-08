@@ -10,31 +10,60 @@ namespace CarTemplateMethod
     {
         private Dictionary<string, double> distance = new Dictionary<string, double>()
         {
-            {"France", 2267},
+            {"France", 2267}, //km
             {"Germany", 1324},
             {"UK", 2649},
         };
+        private Random rnd = new Random();
 
         private double packingTime = 2.5;
         private double shippingTime;
-        private double unpackingTime;
+        private double unpackingTime = 1.5;
+        private double allShippingTime;
 
         private int packingTimeDeflection = 10;
-        private Random rnd = new Random();
+        private int shippingTimeDeflection = 15;
+        private int shippingSpeed = 100; //km/h
+
+        //*****************
+
+        private double getReadyTime = 8.3;
+        private double constructingTime = 20;
+
+        private int getReadyTimeDeflection = 5;
+        private int constructingTimeDeflection = 20;
+
+        
+
+        
         
         protected override double GetShippingTime()
        {
-           packingTime += (rnd.Next(-packingTimeDeflection, packingTimeDeflection))/100 * packingTime;
-           var country = distance.ToList()[rnd.Next(distance.Count)];
-           Console.WriteLine("Gear Box details is shipping from " + country.Key + "...");
-           shippingTime = 
-            //country is country.Key
-            //distance is country.Value
+            packingTime = DoDeflection(packingTime, packingTimeDeflection);
+            var country = distance.ToList()[rnd.Next(distance.Count)];
+            shippingTime = DoDeflection(country.Value/shippingSpeed, shippingTimeDeflection);
+            unpackingTime = DoDeflection(unpackingTime, packingTimeDeflection);
+            allShippingTime = packingTime + shippingTime + unpackingTime;
+
+            Console.WriteLine("Gear Box details is packing " + packingTime + " hours");
+            Console.WriteLine("Gear Box details is shipping from " + country.Key + " and it will take " + shippingTime + "hours");
+            Console.WriteLine("Gear Box details is unpacking " + unpackingTime + " hours");
+            Console.WriteLine("Gear Box in the Car Factory will be after " + allShippingTime + " hours");
+
+            return allShippingTime;
        }
 
         protected override double GetConstructingTime()
        {
-           //make automatic gear box
+            getReadyTime = DoDeflection(getReadyTime, getReadyTimeDeflection);
+           //konstravimas
+           //idejimas i masina
+       }
+
+       private double DoDeflection(double value, int def)
+       {
+            value += (rnd.Next(-def, def))/100 * value;
+            return value;
        }
     }
 }
