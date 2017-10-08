@@ -8,14 +8,16 @@ namespace CarTemplateMethod
 {
     class BMWPartsShop: CarFactory
     {
+        private Random rnd = new Random();
+
+        //Europe variables
         private Dictionary<string, double> distance = new Dictionary<string, double>()
         {
             {"France", 2267}, //km
             {"Germany", 1324},
-            {"UK", 2649},
+            {"UK", 2649}
         };
-        private Random rnd = new Random();
-
+        
         private double packingTime = 2.5;
         private double shippingTime;
         private double unpackingTime = 1.5;
@@ -25,8 +27,7 @@ namespace CarTemplateMethod
         private int shippingTimeDeflection = 15;
         private int shippingSpeed = 100; //km/h
 
-        //*****************
-
+        //Automatic Gear Box variables
         private double getReadyTime = 8.3;
         private double constructingTime = 20;
         private double finishingTime = 15;
@@ -63,7 +64,7 @@ namespace CarTemplateMethod
             Console.WriteLine("Getting ready takes " + getReadyTime + "hours");
             Console.WriteLine("Constructing Gear Box takes " + constructingTime + " hours");
             Console.WriteLine("Putting Gear Box to the car takes " + finishingTime + " hours");
-            Console.WriteLine("Gear Box in the car will be after")
+            Console.WriteLine("Gear Box in the car will be after");
 
             return allConstructingTime;
        }
