@@ -10,7 +10,7 @@ namespace CarTemplateMethod
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }
