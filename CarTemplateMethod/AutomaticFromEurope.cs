@@ -8,37 +8,20 @@ namespace CarTemplateMethod
 {
     class BMWPartsShop: CarFactory
     {
-        private Random rnd = new Random();
-
-        //Europe variables
-        private Dictionary<string, double> distance = new Dictionary<string, double>()
-        {
-            {"France", 2267}, //km
-            {"Germany", 1324},
-            {"UK", 2649}
-        };
-        
-        private double packingTime = 2.5;
-        private double shippingTime;
-        private double unpackingTime = 1.5;
-        private double allShippingTime;
-
-        private int packingTimeDeflection = 10;
-        private int shippingTimeDeflection = 15;
-        private int shippingSpeed = 100; //km/h
-
-        //Automatic Gear Box variables
-        private double getReadyTime = 8.3;
-        private double constructingTime = 20;
-        private double finishingTime = 15;
-        private double allConstructingTime;
-
-        private int getReadyTimeDeflection = 5;
-        private int constructingTimeDeflection = 20;
-        private int finishingTimeDeflection = 45;
-
         protected override double GetShippingTime()
        {
+            distance = new Dictionary<string, double>()
+            {
+                {"France", 2267}, //km
+                {"Germany", 1324},
+                {"UK", 2649}
+            };
+            packingTime = 2.5;
+            unpackingTime = 1.5;
+            packingTimeDeflection = 10;
+            shippingTimeDeflection = 15;
+            shippingSpeed = 100;
+
             packingTime = DoDeflection(packingTime, packingTimeDeflection);
             var country = distance.ToList()[rnd.Next(distance.Count)];
             shippingTime = DoDeflection(country.Value/shippingSpeed, shippingTimeDeflection);
@@ -55,6 +38,14 @@ namespace CarTemplateMethod
 
         protected override double GetConstructingTime()
        {
+            getReadyTime = 8.3;
+            constructingTime = 20;
+            finishingTime = 15;
+
+            getReadyTimeDeflection = 5;
+            constructingTimeDeflection = 20;
+            finishingTimeDeflection = 45;
+            
             getReadyTime = DoDeflection(getReadyTime, getReadyTimeDeflection);
             constructingTime = DoDeflection(constructingTime, constructingTimeDeflection);
             finishingTime = DoDeflection(finishingTime, finishingTimeDeflection);
