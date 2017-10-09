@@ -12,7 +12,7 @@ namespace CarTemplateMethod
        {
             distance = new Dictionary<string, double>()
             {
-                {"Japan", 8122}, //km 
+                {"Japan", 8122},
                 {"China", 6237.27}
             };
             
