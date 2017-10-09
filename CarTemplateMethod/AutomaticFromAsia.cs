@@ -21,6 +21,15 @@ namespace CarTemplateMethod
             packingTimeDeflection = 1;
             shippingTimeDeflection = 5;
             shippingSpeed = 200;
+
+            packingTime = DoDeflection(packingTime, packingTimeDeflection);
+            var country = distance.ToList()[rnd.Next(distance.Count)];
+            Console.WriteLine("Gear Box details is shipping from " + country.Key + " and it will take " + shippingTime + "hours");
+            shippingTime = DoDeflection(country.Value/shippingSpeed, shippingTimeDeflection);
+            unpackingTime = DoDeflection(unpackingTime, packingTimeDeflection);
+            allShippingTime = packingTime + shippingTime + unpackingTime;
+
+            return allShippingTime;
        }
 
         protected override double GetConstructingTime()
@@ -31,6 +40,13 @@ namespace CarTemplateMethod
             getReadyTimeDeflection = 5;
             constructingTimeDeflection = 20;
             finishingTimeDeflection = 45;
+
+            getReadyTime = DoDeflection(getReadyTime, getReadyTimeDeflection);
+            constructingTime = DoDeflection(constructingTime, constructingTimeDeflection);
+            finishingTime = DoDeflection(finishingTime, finishingTimeDeflection);
+            allConstructingTime = getReadyTime + constructingTime + finishingTime;
+
+            return allConstructingTime;
        }
     }
 }

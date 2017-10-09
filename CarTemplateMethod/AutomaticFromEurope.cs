@@ -49,10 +49,5 @@ namespace CarTemplateMethod
             return allConstructingTime;
        }
 
-       private double DoDeflection(double value, int def)
-       {
-            value += (rnd.Next(-def, def))/100 * value;
-            return value;
-       }
     }
 }

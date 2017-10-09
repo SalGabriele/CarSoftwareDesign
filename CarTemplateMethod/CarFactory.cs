@@ -20,7 +20,7 @@ namespace CarTemplateMethod
 
         protected int packingTimeDeflection;
         protected int shippingTimeDeflection;
-        protected int shippingSpeed; //km/h
+        protected int shippingSpeed;
 
         //Gear Box Type based variables
         protected double getReadyTime;
@@ -57,6 +57,11 @@ namespace CarTemplateMethod
             Console.WriteLine("Constructing Gear Box takes " + constructingTime + " hours");
             Console.WriteLine("Putting Gear Box to the car takes " + finishingTime + " hours");
             Console.WriteLine("Gear Box in the car will be after");
+        }
+        protected double DoDeflection(double value, int def)
+        {
+            value += (rnd.Next(-def, def))/100 * value;
+            return value;
         }
   
     }
