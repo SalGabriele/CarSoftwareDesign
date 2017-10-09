@@ -23,7 +23,7 @@ namespace CarTemplateMethod.Calculators
        private void PrintShippingTime(double packing, double shipping, double unpacking)
         {
             Console.WriteLine("Gear Box details is packing " + packing + " hours");
-            Console.WriteLine("Shipping will take " + shippingTime + "hours");
+            Console.WriteLine("Shipping will take " + shipping + "hours");
             Console.WriteLine("Gear Box details is unpacking " + unpacking + " hours");
         }
 

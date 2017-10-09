@@ -10,7 +10,17 @@ namespace CarTemplateMethod
     {
         static void Main(string[] args)
         {
-            
+            CarFactory autoAsia = new AutomaticFromAsia();
+            autoAsia.GetTimeToMakeGearBox();
+
+            CarFactory autoEurope = new AutomaticFromEurope();
+            autoEurope.GetTimeToMakeGearBox();
+
+            CarFactory mechAsia = new MechanicFromAsia();
+            mechAsia.GetTimeToMakeGearBox();
+
+            CarFactory mechEurope = new MechanicFromEurope();
+            mechEurope.GetTimeToMakeGearBox();
         }
     }
 }
