@@ -8,45 +8,25 @@ namespace CarTemplateMethod
 {
     class AutomaticFromAsia: CarFactory
     {
+       Calculators.ShippingTimeCalculator shipCalc = new  Calculators.ShippingTimeCalculator();
+       Calculators.ConstructingTimeCalculator constrCalc = new  Calculators.ConstructingTimeCalculator();
+
        protected override double GetShippingTime()
        {
-            distance = new Dictionary<string, double>()
-            {
-                {"Japan", 8122},
-                {"China", 6237.27}
-            };
-            
-            packingTime = 1;
-            unpackingTime = 1.5;
-            packingTimeDeflection = 1;
-            shippingTimeDeflection = 5;
-            shippingSpeed = 200;
+            double shippingTimeFromAsia = shipCalc.GetShippingTime(Regions.Asia.distance, Regions.Asia.packingTime, Regions.Asia.packingTimeDeflection, 
+                Regions.Asia.shippingSpeed, Regions.Asia.shippingTimeDeflection, Regions.Asia.unpackingTime);
 
-            packingTime = DoDeflection(packingTime, packingTimeDeflection);
-            var country = distance.ToList()[rnd.Next(distance.Count)];
-            Console.WriteLine("Gear Box details is shipping from " + country.Key + " and it will take " + shippingTime + "hours");
-            shippingTime = DoDeflection(country.Value/shippingSpeed, shippingTimeDeflection);
-            unpackingTime = DoDeflection(unpackingTime, packingTimeDeflection);
-            allShippingTime = packingTime + shippingTime + unpackingTime;
-
-            return allShippingTime;
+            return shippingTimeFromAsia;
        }
 
         protected override double GetConstructingTime()
        {
-            getReadyTime = 8.3;
-            constructingTime = 20;
-            finishingTime = 15;
-            getReadyTimeDeflection = 5;
-            constructingTimeDeflection = 20;
-            finishingTimeDeflection = 45;
-
-            getReadyTime = DoDeflection(getReadyTime, getReadyTimeDeflection);
-            constructingTime = DoDeflection(constructingTime, constructingTimeDeflection);
-            finishingTime = DoDeflection(finishingTime, finishingTimeDeflection);
-            allConstructingTime = getReadyTime + constructingTime + finishingTime;
-
-            return allConstructingTime;
+            double constructingTimeA = constrCalc.GetConstructingTime(GearBoxTypes.AutomaticGearBox.getReadyTime, 
+                GearBoxTypes.AutomaticGearBox.getReadyTimeDeflection, GearBoxTypes.AutomaticGearBox.constructingTime, 
+                GearBoxTypes.AutomaticGearBox.constructingTimeDeflection, GearBoxTypes.AutomaticGearBox.finishingTime, 
+                GearBoxTypes.AutomaticGearBox.finishingTimeDeflection);
+            
+            return constructingTimeA;
        }
     }
 }

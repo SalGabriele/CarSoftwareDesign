@@ -8,9 +8,9 @@ namespace CarTemplateMethod
 {
     static class Deflection
     {
-        static Random rnd = new Random();
+        public static Random rnd = new Random();
 
-        static double Do(double value, int def)
+        public static double Do(double value, int def)
         {
             value += (rnd.Next(-def, def))/100 * value;
             return value;
