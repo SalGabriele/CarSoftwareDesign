@@ -24,14 +24,10 @@ namespace CarTemplateMethod
 
             packingTime = DoDeflection(packingTime, packingTimeDeflection);
             var country = distance.ToList()[rnd.Next(distance.Count)];
+            Console.WriteLine("Gear Box details is shipping from " + country.Key + " and it will take " + shippingTime + "hours");
             shippingTime = DoDeflection(country.Value/shippingSpeed, shippingTimeDeflection);
             unpackingTime = DoDeflection(unpackingTime, packingTimeDeflection);
             allShippingTime = packingTime + shippingTime + unpackingTime;
-
-            Console.WriteLine("Gear Box details is packing " + packingTime + " hours");
-            Console.WriteLine("Gear Box details is shipping from " + country.Key + " and it will take " + shippingTime + "hours");
-            Console.WriteLine("Gear Box details is unpacking " + unpackingTime + " hours");
-            Console.WriteLine("Gear Box in the Car Factory will be after " + allShippingTime + " hours");
 
             return allShippingTime;
        }
@@ -41,7 +37,6 @@ namespace CarTemplateMethod
             getReadyTime = 8.3;
             constructingTime = 20;
             finishingTime = 15;
-
             getReadyTimeDeflection = 5;
             constructingTimeDeflection = 20;
             finishingTimeDeflection = 45;
@@ -49,13 +44,7 @@ namespace CarTemplateMethod
             getReadyTime = DoDeflection(getReadyTime, getReadyTimeDeflection);
             constructingTime = DoDeflection(constructingTime, constructingTimeDeflection);
             finishingTime = DoDeflection(finishingTime, finishingTimeDeflection);
-
             allConstructingTime = getReadyTime + constructingTime + finishingTime;
-
-            Console.WriteLine("Getting ready takes " + getReadyTime + "hours");
-            Console.WriteLine("Constructing Gear Box takes " + constructingTime + " hours");
-            Console.WriteLine("Putting Gear Box to the car takes " + finishingTime + " hours");
-            Console.WriteLine("Gear Box in the car will be after");
 
             return allConstructingTime;
        }
