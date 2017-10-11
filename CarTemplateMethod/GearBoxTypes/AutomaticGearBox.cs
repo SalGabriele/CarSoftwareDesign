@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CarTemplateMethod.GearBoxTypes
 {
-    static class AutomaticGearBox
+    class AutomaticGearBox: GearBoxType
     {
-        public static double getReadyTime = 8.3;
-        public static double constructingTime = 20;
-        public static double finishingTime = 15;
-        public static int getReadyTimeDeflection = 5;
-        public static int constructingTimeDeflection = 20;
-        public static int finishingTimeDeflection = 45;
+        public double getReadyTime = 8.3;
+        public double constructingTime = 20;
+        public double finishingTime = 15;
+        public int getReadyTimeDeflection = 5;
+        public int constructingTimeDeflection = 20;
+        public int finishingTimeDeflection = 45;
     }
 }

@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-AutomaticFromEurope",
+      "appliesTo": "AutomaticFromEurope.cs",
+      "type": "launch"
+    }
+  ]
+}

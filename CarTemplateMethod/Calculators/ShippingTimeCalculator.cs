@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarTemplateMethod.Regions;
 
 namespace CarTemplateMethod.Calculators
 {
     class ShippingTimeCalculator
     {
-       public double GetShippingTime(Dictionary<string, double> dist, double packing, int packingD, double shippingS, int shippingD, double unpacking)
+       public double GetShippingTime(Region reg)
        {
-            packing = Deflection.Do(packing, packingD);
-            var country = dist.ToList()[Deflection.rnd.Next(dist.Count)];
-            double shipping = Deflection.Do(country.Value/shippingS, shippingD);
-            Console.WriteLine("Gear Box details is shipping from " + country.Key + " and it will take " + shipping + "hours");
-            unpacking = Deflection.Do(unpacking, packingD);
-            double shippingTime = packing + shipping + unpacking;
-            PrintShippingTime(packing, shipping, unpacking);
+            reg.packingTime = Deflection.Do(reg.packingTime, reg.packingTimeDeflection);
+            var country = reg.distance.ToList()[Deflection.rnd.Next(reg.distance.Count)];
+            double shipping = Deflection.Do(country.Value/reg.shippingSpeed, reg.shippingTimeDeflection);
+            Console.WriteLine("Gear Box details is shipping from ");
+            reg.unpackingTime = Deflection.Do(reg.unpackingTime, reg.packingTimeDeflection);
+            double shippingTime = reg.packingTime + shipping + reg.unpackingTime;
+            PrintShippingTime(reg.packingTime, shipping, reg.unpackingTime);
             return shippingTime;
        }
 

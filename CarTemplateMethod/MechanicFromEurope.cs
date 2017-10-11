@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarTemplateMethod.GearBoxTypes;
+using CarTemplateMethod.Regions;
+using CarTemplateMethod.Calculators;
 
 namespace CarTemplateMethod
 {
     class MechanicFromEurope: CarFactory
     {
-        Calculators.ShippingTimeCalculator shipCalc = new  Calculators.ShippingTimeCalculator();
-        Calculators.ConstructingTimeCalculator constrCalc = new  Calculators.ConstructingTimeCalculator();
+        ShippingTimeCalculator shipCalc = new ShippingTimeCalculator();
+        ConstructingTimeCalculator constrCalc = new ConstructingTimeCalculator();
+        Europe europe = new Europe();
+        MechanicGearBox mech = new MechanicGearBox();
 
        protected override double GetShippingTime()
        {
-            double shippingTimeFromEurope = shipCalc.GetShippingTime(Regions.Europe.distance, Regions.Europe.packingTime, Regions.Europe.packingTimeDeflection, 
-                Regions.Europe.shippingSpeed, Regions.Europe.shippingTimeDeflection, Regions.Europe.unpackingTime);
+            double shippingTimeFromEurope = shipCalc.GetShippingTime(europe);
 
             return shippingTimeFromEurope;
        }
 
         protected override double GetConstructingTime()
        {
-            double constructingTimeM = constrCalc.GetConstructingTime(GearBoxTypes.MechanicGearBox.getReadyTime, 
-                GearBoxTypes.MechanicGearBox.getReadyTimeDeflection, GearBoxTypes.MechanicGearBox.constructingTime, 
-                GearBoxTypes.MechanicGearBox.constructingTimeDeflection, GearBoxTypes.MechanicGearBox.finishingTime, 
-                GearBoxTypes.MechanicGearBox.finishingTimeDeflection);
+            double constructingTimeM = constrCalc.GetConstructingTime(mech);
             
             return constructingTimeM;
        }

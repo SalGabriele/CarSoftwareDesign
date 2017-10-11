@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CarTemplateMethod.GearBoxTypes;
 
 namespace CarTemplateMethod.Calculators
 {
     class ConstructingTimeCalculator
     {
-        public double GetConstructingTime(double ready, int readyD, double construct, int constructD, double finish, int finishD)
+        public double GetConstructingTime(GearBoxType gearBox)
        {
-            ready = Deflection.Do(ready, readyD);
-            construct = Deflection.Do(construct, constructD);
-            finish = Deflection.Do(finish, finishD);
-            double constructingTime = ready + construct + finish;
-            PrintConstructingTime(ready, construct, finish);
+            gearBox.getReadyTime = Deflection.Do(gearBox.getReadyTime, gearBox.getReadyTimeDeflection);
+            gearBox.constructingTime = Deflection.Do(gearBox.constructingTime, gearBox.constructingTimeDeflection);
+            gearBox.finishingTime = Deflection.Do(gearBox.finishingTime, gearBox.finishingTimeDeflection);
+            double constructingTime = gearBox.getReadyTime + gearBox.constructingTime + gearBox.finishingTime;
+            PrintConstructingTime(gearBox.getReadyTime, gearBox.constructingTime, gearBox.finishingTime);
             return constructingTime;
        }
 
