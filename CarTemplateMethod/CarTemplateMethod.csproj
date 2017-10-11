@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{B83A4F0A-ED63-4B4A-BE4A-950707B74AE6}</ProjectGuid>
+    <ProjectGuid>{717A307F-601E-44C1-806D-91978736B5F7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ConsoleApplication</AssemblyName>
@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".vs\CarTemplateMethod\v15\.suo" />
+    <None Include=".vs\CarTemplateMethod\v15\sqlite3\storage.ide" />
     <None Include=".vs\config\applicationhost.config" />
     <None Include=".vs\ProjectSettings.json" />
     <None Include=".vs\slnx.sqlite" />

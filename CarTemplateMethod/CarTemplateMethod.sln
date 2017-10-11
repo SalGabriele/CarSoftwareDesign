@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTemplateMethod", "CarTemplateMethod.csproj", "{B83A4F0A-ED63-4B4A-BE4A-950707B74AE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTemplateMethod", "CarTemplateMethod.csproj", "{717A307F-601E-44C1-806D-91978736B5F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B83A4F0A-ED63-4B4A-BE4A-950707B74AE6}.Debug|x86.ActiveCfg = Debug|x86
-		{B83A4F0A-ED63-4B4A-BE4A-950707B74AE6}.Debug|x86.Build.0 = Debug|x86
-		{B83A4F0A-ED63-4B4A-BE4A-950707B74AE6}.Release|x86.ActiveCfg = Release|x86
-		{B83A4F0A-ED63-4B4A-BE4A-950707B74AE6}.Release|x86.Build.0 = Release|x86
+		{717A307F-601E-44C1-806D-91978736B5F7}.Debug|x86.ActiveCfg = Debug|x86
+		{717A307F-601E-44C1-806D-91978736B5F7}.Debug|x86.Build.0 = Debug|x86
+		{717A307F-601E-44C1-806D-91978736B5F7}.Release|x86.ActiveCfg = Release|x86
+		{717A307F-601E-44C1-806D-91978736B5F7}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FD293A37-77E0-4C24-A505-F9361284751B}
+		SolutionGuid = {B69C817D-2B8A-4D5F-B22C-A44BB0D45AAD}
 	EndGlobalSection
 EndGlobal

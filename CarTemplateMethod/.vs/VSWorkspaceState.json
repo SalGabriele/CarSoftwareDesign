@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Calculators",
+    "\\Regions"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\CarTemplateMethod.csproj",
   "PreviewInSolutionExplorer": false
 }

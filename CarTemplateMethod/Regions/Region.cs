@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CarTemplateMethod.Regions
 {
     abstract class Region
     {
-        public Dictionary<string, double> distance;
-        public double packingTime;
-        public double unpackingTime;
-        public int packingTimeDeflection;
-        public int shippingTimeDeflection;
-        public double shippingSpeed;
+        public abstract Dictionary<string, double> Distance { get; set; }
+        public abstract double PackingTime { get; set; }
+        public abstract double UnpackingTime { get; set; }
+        public abstract int PackingTimeDeflection { get; set; }
+        public abstract int ShippingTimeDeflection { get; set; }
+        public abstract double ShippingSpeed { get; set; }
     }
 }
