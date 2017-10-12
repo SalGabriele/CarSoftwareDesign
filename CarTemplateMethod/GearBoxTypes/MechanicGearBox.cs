@@ -2,12 +2,12 @@ namespace CarTemplateMethod.GearBoxTypes
 {
     class MechanicGearBox: GearBoxType
     {
-        public double getReadyTime = 3;
-        public double constructingTime = 25;
-        public double finishingTime = 7;
-        public int getReadyTimeDeflection = 6;
-        public int constructingTimeDeflection = 22;
-        public int finishingTimeDeflection = 10;
+        private double getReadyTime = 3;
+        private double constructingTime = 25;
+        private double finishingTime = 7;
+        private int getReadyTimeDeflection = 6;
+        private int constructingTimeDeflection = 22;
+        private int finishingTimeDeflection = 10;
 
         public override double GetReadyTime { get { return getReadyTime; } set { getReadyTime = value; } }
         public override double ConstructingTime { get { return constructingTime; } set { constructingTime = value; } }

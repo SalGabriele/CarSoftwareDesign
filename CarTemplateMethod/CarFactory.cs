@@ -17,7 +17,8 @@ namespace CarTemplateMethod
             Console.WriteLine("Gear Box in the Car Factory will be after " + shippingTime + " hours");
             double constructingTime = GetConstructingTime();
             Console.WriteLine("Constucting will take " + constructingTime + " hours");
-            Console.WriteLine("You can take your car after " + shippingTime + constructingTime + " hours");
+            double time = shippingTime + constructingTime;
+            Console.WriteLine("You can take your car after " + time + " hours\n");
         }
     }
 }

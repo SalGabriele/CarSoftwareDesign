@@ -6,10 +6,10 @@ namespace CarTemplateMethod
 {
     class AutomaticFromAsia: CarFactory
     {
-        ShippingTimeCalculator shipCalc = new ShippingTimeCalculator();
-        ConstructingTimeCalculator constrCalc = new ConstructingTimeCalculator();
-        Asia asia = new Asia();
-        AutomaticGearBox auto = new AutomaticGearBox();
+        private ShippingTimeCalculator shipCalc = new ShippingTimeCalculator();
+        private ConstructingTimeCalculator constrCalc = new ConstructingTimeCalculator();
+        private Asia asia = new Asia();
+        private AutomaticGearBox auto = new AutomaticGearBox();
 
        protected override double GetShippingTime()
        {
